@@ -210,3 +210,13 @@ FROM (
 ) ranked
 WHERE rank_in_state <= 3
 ORDER BY seller_state, rank_in_state;
+
+EXPLAIN ANALYZE
+SELECT * FROM raw.reviews
+WHERE order_id = 'c88b1d1b157a9999ce368f218a407141';
+
+-- Indexes on columns used for joins and lookups
+CREATE INDEX IF NOT EXISTS idx_reviews_order_id     ON raw.reviews (order_id);
+CREATE INDEX IF NOT EXISTS idx_orders_customer_id   ON raw.orders (customer_id);
+CREATE INDEX IF NOT EXISTS idx_items_product_id     ON raw.order_items (product_id);
+CREATE INDEX IF NOT EXISTS idx_items_seller_id      ON raw.order_items (seller_id);
