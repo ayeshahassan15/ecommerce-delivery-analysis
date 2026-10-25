@@ -7,7 +7,7 @@ Python, statistics and an interactive dashboard.
 from 4.29 to 2.57. Delays longer than 3 days hurt the most.
 
 See `reports/final_report.md` for the full report and `reports/dashboard.html` for the dashboard.
-
+**Live dashboard:** https://ayeshahassan15.github.io/ecommerce-delivery-analysis/
 ## Folders
 - `sql/` schema, load script, queries
 - `notebooks/` EDA and statistics
