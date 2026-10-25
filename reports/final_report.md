@@ -59,3 +59,13 @@ from Oct 2016 to Aug 2018.
 - A Plotly dashboard was used instead of Power BI because of storage limits.
 - Future work: cohort retention analysis, freight cost vs satisfaction, Pandas vs Polars
   speed test, and a model to predict late deliveries.
+  ## Additional analyses
+- **Customer retention:** only 3.0% of customers ordered more than once. Customers whose first
+  order was late came back slightly less often (2.51% vs 3.04%).
+- **Freight cost:** shipping cost has almost no link with review scores (correlation -0.09).
+  Delivery time has a stronger link (-0.23). Customers react to waiting, not to shipping price.
+- **Late delivery prediction:** a gradient boosting model using only information known at purchase
+  reached ROC AUC 0.70. The company's own delivery estimate was the most important feature.
+  Adding seller state did not improve the result. The riskiest 10% of orders were late 9.0% of the
+  time, against 5.3% on average, so the model can help rank risk but is too weak to rely on alone.
+  Seller processing time and carrier data would likely be needed to improve it.
